@@ -190,4 +190,15 @@ public class DLList<E> implements ListInterface<E> {
 		current = current.getNext(); 
 		return temp;
 	} 
+	public E previous()
+	{
+		if (current == null) 
+		{
+			System.out.printf("Error in hasPrevious()\n");
+			System.exit(0);
+		}
+		E temp = current.getData();
+		curent = current.getPrevious();
+		return temp;
+	}
 }
