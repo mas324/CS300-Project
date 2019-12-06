@@ -66,9 +66,7 @@ public class Dequeue<E> implements DequeInterface<E> {
 
     @Override
     public boolean isEmpty() {
-	if (size == 0)
-	    return true;
-	return false;
+	return size == 0;
     }
 
 }
