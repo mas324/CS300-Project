@@ -172,6 +172,12 @@ public class DLList<E> implements ListInterface<E> {
 			return false;
 		return true; 
 	}
+	public boolean hasPrevious() //returns true if current variable's previous is not null
+	{
+		if (current == null)
+			return false;
+		return true;
+	}
 	
 	public E next() // returns data of current node and moves current to the next node
 	{
