@@ -198,7 +198,7 @@ public class DLList<E> implements ListInterface<E> {
 			System.exit(0);
 		}
 		E temp = current.getData();
-		curent = current.getPrevious();
+		current = current.getPrevious();
 		return temp;
 	}
 }
