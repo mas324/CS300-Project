@@ -142,6 +142,7 @@ public class DLList<E> implements ListInterface<E> {
 		return p.getData(); 
 	}
 
+
 	public E set (int index, E x) // sets data at position index to x
 	{
 		if (index >= length || index < 0) // index out of bounds
