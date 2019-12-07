@@ -29,7 +29,7 @@ public class TestLLists
 		for (int i = 0; i < NUM_DATA; i++)
 			linkList.add(i);
 		elapsed = System.currentTimeMillis() - start;
-		System.out.printf("Linked List when adding to rear: %d ms\n", elapsed);
+		System.out.printf("Doubly Linked List when adding to rear: %d ms\n", elapsed);
 		
 		//Now the Doubly Linked List of type String
 		strLList.clear();
@@ -37,6 +37,6 @@ public class TestLLists
 		for (int i = 0; i < NUM_DATA; i++)
 			strLList.add(String.valueOf((char)('a' + i)));
 		elapsed = System.currentTimeMillis() - start;
-		System.out.printf("ArrayList when adding to rear: %d ms\n", elapsed);
+		System.out.printf("Doubly Linked List of type String when adding to rear: %d ms\n", elapsed);
 	}
 }
