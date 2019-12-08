@@ -1,52 +1,63 @@
 
 @SuppressWarnings(value = { "unchecked" })
 public class Dequeue<E> implements DequeInterface<E> {
-    
-    private int size, front, back, max;
+
+    private int length, front, back, max;
     private E[] list;
-    
+
     public Dequeue() {
 	list = (E[]) new Object[10];
-	front = 0;
-	back = 9;
+	front = back = 0;
     }
-    
+
     public Dequeue(int size) {
 	list = (E[]) new Object[max = size];
-	front = 0;
-	back = size - 1;
+	front = back = 0;
     }
 
     @Override
     public void addFront(E item) {
-	if (size == max)
-	    return;
-	size++;
-	list[front++] = item;
+	if (length == max) {
+	    System.out.printf("%s. Exiting", new IllegalStateException("Dequeue overflow"));
+	    System.exit(1);
+	}
+
+	list[front = (front - 1 < 0) ? max - 1 : front - 1] = item;
+	length++;
     }
 
     @Override
     public void addBack(E item) {
-	if (size == max)
-	    return;
-	size++;
-	list[back--] = item;
+	if (length == max) {
+	    System.out.printf("%s. Exiting", new IllegalStateException("Dequeue overflow"));
+	    System.exit(1);
+	}
+
+	list[back] = item;
+	back = (back + 1 >= max) ? 0 : back + 1;
+	length++;
     }
 
     @Override
     public E removeFront() {
-	if (size == 0)
+	if (length == 0)
 	    return null;
-	size--;
-	return list[front--];
+	length--;
+	E e = list[front];
+	list[front] = null;
+	front = (front + 1 >= max) ? 0 : front + 1;
+	return e;
     }
 
     @Override
     public E removeBack() {
-	if (size == 0)
+	if (length == 0)
 	    return null;
-	size--;
-	return list[back++];
+	length--;
+	E e = list[back];
+	list[back] = null;
+	back = (back - 1 < 0) ? max - 1 : back - 1;
+	return e;
     }
 
     @Override
@@ -61,12 +72,12 @@ public class Dequeue<E> implements DequeInterface<E> {
 
     @Override
     public int size() {
-	return size;
+	return length;
     }
 
     @Override
     public boolean isEmpty() {
-	return size == 0;
+	return length == 0;
     }
 
 }

@@ -13,8 +13,10 @@ public class CreateGallerySimulation {
 	    try {
 		System.out.print("Please enter the Month Day and Year of the simulation: ");
 		date = input.nextLine();
+		//date = "December 13";
 		System.out.print("Please enter the length of the simulation in minutes >0: ");
 		minutes = input.nextInt();
+		//minutes = 1000;
 		if (minutes < 1)
 		    System.out.print("Minutes must be more than 0\n\n");
 	    } catch (InputMismatchException e) {

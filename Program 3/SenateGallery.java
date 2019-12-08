@@ -6,7 +6,7 @@ public class SenateGallery {
 
     public SenateGallery() {
 	date = "";
-	waitingLine = new Dequeue<Visitor>(500);
+	waitingLine = new Dequeue<Visitor>(Short.MAX_VALUE);
 	visitorFinished = new DLinkedList<Visitor>();
 	visitorInGallery = new DLinkedList<Visitor>();
     }
@@ -52,9 +52,9 @@ public class SenateGallery {
 		    visitorInGallery.get(visitor).decrementTimeRemainingInGallery();
 	    }
 	    
-	    if (visitorInGallery.size() <= 55 && !waitingLine.isEmpty()) {
+	    if (visitorInGallery.size() <= 55) {
 		int available = 90 - visitorInGallery.size();
-		for (int i = 0; i < available && i <= 35; i++) {
+		for (int i = 0; i < available && i <= 35 && !waitingLine.isEmpty(); i++) {
 		    Visitor v = waitingLine.removeFront();
 		    v.setTimeOutOfQueue(currentMinute);
 		    visitorInGallery.add(v);
@@ -67,7 +67,7 @@ public class SenateGallery {
 	System.out.printf("The date of the visit to the Senate Gallery is %s%n", date);
 	System.out.printf("Total who finished viewing is %s%n", visitorFinished.size());
 	System.out.printf("Total who are still in gallery is %s%n", visitorInGallery.size());
-	System.out.printf("Total who are still waiting is %%ns", waitingLine.size());
+	System.out.printf("Total who are still waiting is %s%n", waitingLine.size());
 
 	double waitVIP = 0, waitREG = 0;
 	int countVIP = 0, countREG = 0;
@@ -84,10 +84,10 @@ public class SenateGallery {
 	}
 
 	System.out.printf(
-		"The average wait tome for VIP Visitors who are in the gallery or finished viewing is %.2d seconds%n",
+		"The average wait time for VIP Visitors who are in the gallery or finished viewing is %.2f seconds%n",
 		waitVIP / countVIP);
 	System.out.printf(
-		"The average wait tome for Regular Visitors who are in the gallery or finished viewing is %.2d seconds%n",
+		"The average wait time for Regular Visitors who are in the gallery or finished viewing is %.2f seconds%n",
 		waitREG / countREG);
     }
 
