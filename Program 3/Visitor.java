@@ -1,7 +1,8 @@
 import java.util.Random;
 
 public class Visitor {
-    private int timeOntoQueue, timeOutOfQueue, totalTimeInQueue, timeInGallery, timeRemainingInGallery;
+	private int timeOntoQueue, timeOutOfQueue, totalTimeInQueue, timeInGallery, timeRemainingInGallery;
+	private static Random r = new Random();
 
     public Visitor(int time) {
 	setTimeOntoQueue(time);
@@ -18,7 +19,7 @@ public class Visitor {
     }
 
     private void setTimeInGallery() {
-	int x = new Random().nextInt(101);
+	int x = r.nextInt(101);
 	if (x <= 20)
 	    timeInGallery = 5;
 	else if (x <= 80)
