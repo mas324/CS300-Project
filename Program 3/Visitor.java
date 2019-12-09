@@ -9,23 +9,24 @@ public class Visitor {
 	private static Random randy = new Random(2);
 	
 	public Visitor() {
-		//constructor for Visitor
+		this.setTimeOntoQueue = timeOntoQueue;
+		this.setTimeInGallery = timeInGallery;
 	}
 
-	void setTimeOntoQueue(int timeOntoQueue){
+	public void setTimeOntoQueue(int timeOntoQueue){
 	//method
 	}
-	void setTimeOutOfQueue(int timeOutOfQueue){
+	public void setTimeOutOfQueue(int timeOutOfQueue){
 		//method
 	}
-	void setTimeInGallery() {
+	public void setTimeInGallery() {
 		//method
 	}
-	getTotalTimeInQueue(){
-		//getter
+	public int getTotalTimeInQueue(){
+		return totalTimeInQueue;
 	}
-	getTimeRemainingInGallery(){
-		//getter
+	public int getTimeRemainingInGallery(){
+		return timeRemainingInGallery;
 	}
 
 }
