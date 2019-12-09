@@ -6,7 +6,7 @@ public class Visitor {
 	private int totalTimeInQueue;
 	private int timeInGallery;
 	private int timeRemainingInGallery;
-	private static int randy; 
+	private static Random randy = new Random(2);
 	
 	public Visitor() {
 		//constructor for Visitor
