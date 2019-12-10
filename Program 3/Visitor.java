@@ -22,6 +22,9 @@ public class Visitor {
 	public void setTimeInGallery() {
 		//method
 	}
+	public int decrementTimeRemainingInGallery() {
+		//decrements time by one minute
+	}
 	public int getTotalTimeInQueue(){
 		return totalTimeInQueue;
 	}
