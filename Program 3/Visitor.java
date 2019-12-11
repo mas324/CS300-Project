@@ -25,13 +25,14 @@ public class Visitor {
 	public void setTimeInGallery() {
 		randomP = randy.nextInt(100);
 		
-		if(randomP <= 20) {
+		if(randomP <= 20) 
 			timeInGallery = 5;
-		if(randomP <= 40) {
+		else if(randomP <= 40) 
 			timeInGallery = 20;
-		else {
+		else 
 			timeInGallery = 10;
-		}
+
+		timeRemainingInGallery = timeInGallery;
 	}
 	public void decrementTimeRemainingInGallery() {
 		timeRemainingInGallery--;
