@@ -18,6 +18,10 @@ public class Visitor {
 	public void setTimeOutOfQueue(int timeOutOfQueue){
 		this.setTimeOutOfQueue = timeOutOfQueue;
 	}
+	public void setTotalTimeInQueue() {
+		this.setTotalTimeInQueue = totalTimeInQueue;
+		totalTimeInQueue = timeOutOfQueue - timeOntoQueue;
+	}
 	public void setTimeInGallery() {
 		this.setTimeInGallery = timeInGallery;
 		timeInGallery = randy;
