@@ -14,7 +14,7 @@ public class SenateGallery {
 			
 		} 
 	
-		public static void ouputStatistics 
+		public static void ouputStatistics()
 		{ 
 			
 		} 
