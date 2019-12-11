@@ -10,31 +10,31 @@ public class DLNode<E> {
     }
 
     public DLNode(E x) {
-	data = x;
-	previous = next = null;
+        data = x;
+        previous = next = null;
     }
 
     public void setNext(DLNode next) {
-	this.next = next;
+        this.next = next;
     }
 
     public DLNode getNext() {
-	return next;
+        return next;
     }
 
     public void setPrevious(DLNode previous) {
-	this.previous = previous;
+        this.previous = previous;
     }
 
     public DLNode getPrevious() {
-	return previous;
+        return previous;
     }
 
     public void setData(E data) {
-	this.data = data;
+        this.data = data;
     }
 
     public E getData() {
-	return data;
+        return data;
     }
 }

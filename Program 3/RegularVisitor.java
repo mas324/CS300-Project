@@ -5,15 +5,15 @@ public class RegularVisitor extends Visitor {
     private String regularID;
 
     public RegularVisitor(int time) {
-	super(time);
-	setRegularID();
+        super(time);
+        setRegularID();
     }
 
     public void setRegularID() {
-	regularID = String.format("%s Regular", regularCounter++);
+        regularID = String.format("%s Regular", regularCounter++);
     }
 
     public String getRegularID() {
-	return regularID;
+        return regularID;
     }
 }

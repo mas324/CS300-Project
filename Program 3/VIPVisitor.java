@@ -5,15 +5,15 @@ public class VIPVisitor extends Visitor {
     private String vipID;
 
     public VIPVisitor(int time) {
-	super(time);
-	setVipID();
+        super(time);
+        setVipID();
     }
 
     public void setVipID() {
-	vipID = String.format("%s VIP", vipCounter++);
+        vipID = String.format("%s VIP", vipCounter++);
     }
 
     public String getVipID() {
-	return vipID;
+        return vipID;
     }
 }
