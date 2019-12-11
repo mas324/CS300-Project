@@ -14,16 +14,16 @@ public class Visitor {
 	}
 
 	public void setTimeOntoQueue(int timeOntoQueue){
-	//method
+		this.setTimeOntoQueue = timeOntoQueue;
 	}
 	public void setTimeOutOfQueue(int timeOutOfQueue){
-		//method
+		this.setTimeOutOfQueue = timeOutOfQueue;
 	}
 	public void setTimeInGallery() {
-		//method
+		this.setTimeInGallery = timeInGallery;
 	}
 	public int decrementTimeRemainingInGallery() {
-		//decrements time by one minute
+		timeRemaining--
 	}
 	public int getTotalTimeInQueue(){
 		return totalTimeInQueue;
