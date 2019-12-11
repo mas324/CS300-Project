@@ -12,7 +12,6 @@ public class Visitor {
 		this.setTimeOntoQueue = timeOntoQueue;
 		this.setTimeInGallery = timeInGallery;
 	}
-
 	public void setTimeOntoQueue(int timeOntoQueue){
 		this.setTimeOntoQueue = timeOntoQueue;
 	}
@@ -21,6 +20,7 @@ public class Visitor {
 	}
 	public void setTimeInGallery() {
 		this.setTimeInGallery = timeInGallery;
+		timeInGallery = randy;
 	}
 	public int decrementTimeRemainingInGallery() {
 		timeRemaining--
