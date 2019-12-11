@@ -8,26 +8,24 @@ public class Visitor {
 	private int timeRemainingInGallery;
 	private static Random randy = new Random(2);
 	
-	public Visitor() {
-		this.setTimeOntoQueue = timeOntoQueue;
-		this.setTimeInGallery = timeInGallery;
+	public Visitor(int time) {
+		setTimeOntoQueue(time);
+		setTimeInGallery();
 	}
 	public void setTimeOntoQueue(int timeOntoQueue){
-		this.setTimeOntoQueue = timeOntoQueue;
+		this.timeOntoQueue = timeOntoQueue;
 	}
 	public void setTimeOutOfQueue(int timeOutOfQueue){
-		this.setTimeOutOfQueue = timeOutOfQueue;
+		this.timeOutOfQueue = timeOutOfQueue;
 	}
 	public void setTotalTimeInQueue() {
-		this.setTotalTimeInQueue = totalTimeInQueue;
 		totalTimeInQueue = timeOutOfQueue - timeOntoQueue;
 	}
 	public void setTimeInGallery() {
-		this.setTimeInGallery = timeInGallery;
-		timeInGallery = randy;
+		timeInGallery = randy.nextInt();
 	}
-	public int decrementTimeRemainingInGallery() {
-		timeRemaining--
+	public void decrementTimeRemainingInGallery() {
+		timeRemainingInGallery--;
 	}
 	public int getTotalTimeInQueue(){
 		return totalTimeInQueue;
