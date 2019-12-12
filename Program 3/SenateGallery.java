@@ -53,6 +53,19 @@ public class SenateGallery {
 	}
 
 	public void ouputStatistics() {
+		float waitTimeVIP;
+		int numOfVIP;
+		float waitTimeReg;
+		int numOfReg;
+		int Visitor<
+		
+		while(visitorFinished.hasNext) {
+			if(v.getClass() == VIPVisitor)
+				numOfVIP++;
+			else
+			 numOfReg++;
+		}
+		
 		System.out.println("The date of the visit to the Senate Gallery is %s" + date);
 		System.out.println("Total who finished viewing is %d" + visitorFinished);
 		System.out.println("Total who are still in gallery is %d" + visitorInGallery);
