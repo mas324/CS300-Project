@@ -57,13 +57,14 @@ public class SenateGallery {
 		int numOfVIP;
 		float waitTimeReg;
 		int numOfReg;
-	//	int tempVisitor;
+		Visitor v;
 		
-		while(visitorFinished.hasNext) {
+		while(visitorFinished.hasNext()) {
+			//set v to next visitor finished
 			if(v.getClass() == VIPVisitor)
-				numOfVIP++;
+				numOfVIP++; //also add up the wait time from v
 			else
-				numOfReg++;
+				numOfReg++; //same
 		}
 		
 		System.out.println("The date of the visit to the Senate Gallery is %s" + date);
