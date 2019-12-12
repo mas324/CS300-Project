@@ -12,7 +12,7 @@ public class SenateGallery {
 	}
 
 	public void initializeSenateGallery() {
-		Dequeue<Visitor> waitingLine;
+		
 		
 		for( int i=0; i < 96; i++){ 
 		waitingLine.addBack(); 
