@@ -12,7 +12,24 @@ public class SenateGallery {
 	}
 
 	public void initializeSenateGallery() {
-
+		Dequeue<Visitor> waitingLine;
+		
+		for( int i=0; i < 96; i++){ 
+			.addBack(); 
+		} 
+		
+		for( int j= 0; i< 4; j++){ 
+			.addFront(); 
+			
+		} 
+		
+		for( int z = 0; z<70 ; z--) { 
+			
+			
+		} 
+		
+		
+			
 	}
 
 	public void runSenateGallerySimulation(int simMinutes) {
