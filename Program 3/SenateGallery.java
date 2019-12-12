@@ -25,8 +25,10 @@ public class SenateGallery {
 		} 
 		
 		for( int z = 0; z<70 ; z--) { 
-		waitingLine.removeFront(); 
-		waitingLine.Visitor(0); 
+		 	
+			
+		waitingLine.removeFront();
+		temp visitor = 0; 
 		visitorGallery.add(line.removeFront); 
 			
 		}
