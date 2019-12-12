@@ -25,13 +25,15 @@ public class SenateGallery {
 		} 
 		
 		for( int z = 0; z<70 ; z--) { 
+		Dequeue<Visitor> waitingLine.removeFront(); 
+			visitorGallery.add(line.removeFront); 
 			
-			
-			
+		}
+		
+		
 		} 
 		
 		
-			
 	}
 
 	public void runSenateGallerySimulation(int simMinutes) {
