@@ -53,6 +53,6 @@ public class SenateGallery {
 	}
 
 	public void ouputStatistics() {
-
+		
 	}
 }
