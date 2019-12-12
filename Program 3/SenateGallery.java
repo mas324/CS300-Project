@@ -26,7 +26,7 @@ public class SenateGallery {
 		
 		for( int z = 0; z<70 ; z--) { 
 		waitingLine.removeFront(); 
-		waitinLine.Visitor(0); 
+		waitingLine.Visitor(0); 
 		visitorGallery.add(line.removeFront); 
 			
 		}
