@@ -55,7 +55,12 @@ public class SenateGallery {
 	public void ouputStatistics() {
 		System.out.println("The date of the visit to the Senate Gallery is %s" + date);
 		System.out.println("Total who finished viewing is %d" + visitorFinished);
-		System.out.println("Total who are still in gallery
+		System.out.println("Total who are still in gallery is %d" + visitorInGallery);
+		System.out.println("Total who are still is %d" + waitingLine);
+		System.out.println("The average wait time for VIP Visitors who are in the gallery or finished viewing is %d seconds" + 
+		
+	
+				   
 		
 	}
 }
