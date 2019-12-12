@@ -61,6 +61,7 @@ public class SenateGallery {
 		
 		while(visitorFinished.hasNext()) {
 			//set v to next visitor finished
+			v.add(visitorFinished)
 			if(v.getClass() == VIPVisitor)
 				numOfVIP++; //also add up the wait time from v
 				
