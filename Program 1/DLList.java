@@ -62,7 +62,6 @@ public class DLList<E> implements ListInterface<E> {
 		length = 0;
 	}
 
-	@SuppressWarnings("unchecked")
 	public boolean contains(E x) // returns true if x is a member of the list
 	{
 		DLNode<E> p = front;
@@ -74,7 +73,6 @@ public class DLList<E> implements ListInterface<E> {
 		return false; // search unsuccessful
 	}
 
-	@SuppressWarnings("unchecked")
 	public E get(int index) // returns data at position index
 	{
 		if (index >= length || index < 0) // if index is out of bounds
