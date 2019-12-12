@@ -26,7 +26,30 @@ public class SenateGallery {
 	}
 
 	public void runSenateGallerySimulation(int simMinutes) {
+		for (int currentMinute = 0; currentMinute < simMinutes; currentMinute++) {
 
+			for (int x = 0; x < 3; x++)
+				waitingLine.addBack(new RegularVisitor(currentMinute));
+
+			if (currentMinute % 5 == 0)
+				waitingLine.addFront(new VIPVisitor(currentMinute));
+
+			for (int visitor = 0; visitor < visitorInGallery.size(); visitor++) {
+				if (visitorInGallery.get(visitor).getTimeRemainingInGallery() == 0)
+					visitorFinished.add(visitorInGallery.remove(visitor));
+				else
+					visitorInGallery.get(visitor).decrementTimeRemainingInGallery();
+			}
+
+			if (visitorInGallery.size() <= 55) {
+				int available = 90 - visitorInGallery.size();
+				for (int i = 0; i < available && i <= 35 && !waitingLine.isEmpty(); i++) {
+					Visitor v = waitingLine.removeFront();
+					v.setTimeOutOfQueue(currentMinute);
+					visitorInGallery.add(v);
+				}
+			}
+		}
 	}
 
 	public void ouputStatistics() {
