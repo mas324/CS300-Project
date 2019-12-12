@@ -58,7 +58,7 @@ public class SenateGallery {
 		System.out.println("Total who are still in gallery is %d" + visitorInGallery);
 		System.out.println("Total who are still is %d" + waitingLine);
 		System.out.println("The average wait time for VIP Visitors who are in the gallery or finished viewing is %d seconds" + 
-		
+		System.out.println("The average wait time for Regular Visitors who are in the gallery or finished viewing is %d seconds" + 
 	
 				   
 		
