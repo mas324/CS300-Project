@@ -15,12 +15,12 @@ public class SenateGallery {
 		Dequeue<Visitor> waitingLine;
 		
 		for( int i=0; i < 96; i++){ 
-		Dequeue<Visitor> waitingLine.addBack(); 
+		waitingLine.addBack(); 
 			
 		} 
 		
 		for( int j= 0; i< 4; j++){ 
-		Dequeue<Visitor> waitingLine.addFront(); 
+		waitingLine.addFront(); 
 			
 		} 
 		
