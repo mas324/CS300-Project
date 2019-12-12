@@ -12,31 +12,17 @@ public class SenateGallery {
 	}
 
 	public void initializeSenateGallery() {
-		
-		
-		for( int i=0; i < 96; i++){ 
-		waitingLine.addBack(); 
-			
-		} 
-		
-		for( int j= 0; i< 4; j++){ 
-		waitingLine.addFront(); 
-			
-		} 
-		
-		for( int z = 0; z<70 ; z--) { 
-		 	
-			
-		waitingLine.removeFront();
-		temp visitor = 0; 
-		visitorGallery.add(line.removeFront); 
-			
+		for (int reg = 0; reg < 96; reg++)
+			waitingLine.addBack(new RegularVisitor(0));
+
+		for (int vip = 0; vip < 4; vip++)
+			waitingLine.addFront(new VIPVisitor(0));
+
+		for (int z = 0; z < 70; z--) {
+			Visitor v = waitingLine.removeFront();
+			v.setTimeOutOfQueue(0);
+			visitorInGallery.add(v);
 		}
-		
-		
-		} 
-		
-		
 	}
 
 	public void runSenateGallerySimulation(int simMinutes) {
@@ -46,5 +32,4 @@ public class SenateGallery {
 	public void ouputStatistics() {
 
 	}
-
 }
