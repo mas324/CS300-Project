@@ -16,21 +16,18 @@ public class Visitor {
 
 	public void setTimeOutOfQueue(int timeOutOfQueue) {
 		this.timeOutOfQueue = timeOutOfQueue;
-	}
-
-	public void setTotalTimeInQueue() {
-		totalTimeInQueue = timeOutOfQueue - timeOntoQueue;
+		totalTimeInQueue = this.timeOutOfQueue - timeOntoQueue;
 	}
 
 	public void setTimeInGallery() {
-		int randomP = randy.nextInt(100) + 1;
+		int visitTime = randy.nextInt(101);
 
-		if (randomP <= 20)
+		if (visitTime <= 20)
 			timeInGallery = 5;
-		else if (randomP <= 40)
-			timeInGallery = 20;
-		else
+		else if (visitTime <= 80)
 			timeInGallery = 10;
+		else
+			timeInGallery = 20;
 
 		timeRemainingInGallery = timeInGallery;
 	}

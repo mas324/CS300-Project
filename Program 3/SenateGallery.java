@@ -18,7 +18,7 @@ public class SenateGallery {
 		for (int vip = 0; vip < 4; vip++)
 			waitingLine.addFront(new VIPVisitor(0));
 
-		for (int z = 0; z < 70; z--) {
+		for (int z = 70; z >= 0; z--) {
 			Visitor v = waitingLine.removeFront();
 			v.setTimeOutOfQueue(0);
 			visitorInGallery.add(v);
@@ -53,31 +53,31 @@ public class SenateGallery {
 	}
 
 	public void ouputStatistics() {
-		float waitTimeVIP;
-		int numOfVIP;
-		float waitTimeReg;
-		int numOfReg;
-		Visitor v;
-		
-		while(visitorFinished.hasNext()) {
-			Visitor v = visitorFinished.next;
-			
-			if(v.getClass() == VIP.class)
-				numOfVIP++; //also add up the wait time from v	
-				waitTimeVIP = Visitor v / numOfVIP;
-			else
-				numOfReg++; //same
-				waitTimeReg = Visitor v / numOfReg;
+		float waitTimeVIP = 0, waitTimeReg = 0;
+		int numOfVIP = 0, numOfReg = 0;
+
+		visitorFinished.reset();
+		while (visitorFinished.hasNext()) {
+			Visitor v = visitorFinished.next();
+			if (v.getClass() == VIPVisitor.class) {
+				waitTimeVIP += v.getTotalTimeInQueue();
+				numOfVIP++;
+			} else {
+				waitTimeReg += v.getTotalTimeInQueue();
+				numOfReg++;
+			}
 		}
-		
-		System.out.println("The date of the visit to the Senate Gallery is %s" + date);
-		System.out.println("Total who finished viewing is %d" + visitorFinished);
-		System.out.println("Total who are still in gallery is %d" + visitorInGallery);
-		System.out.println("Total who are still is %d" + waitingLine);
-		System.out.println("The average wait time for VIP Visitors who are in the gallery or finished viewing is %d seconds" + waitTimeVIP );
-		System.out.println("The average wait time for Regular Visitors who are in the gallery or finished viewing is %d seconds" + waitTimeReg );
-	
-				   
-		
+
+		System.out.printf("The date of the visit to the Senate Gallery is %s%n", date);
+		System.out.printf("Total who finished viewing is %s%n", visitorFinished.size());
+		System.out.printf("Total who are still in gallery is %s%n", visitorInGallery.size());
+		System.out.printf("Total who are still is %s%n", waitingLine.size());
+		System.out.printf(
+				"The average wait time for VIP Visitors who are in the gallery or finished viewing is %.2f seconds%n",
+				waitTimeVIP / numOfVIP);
+		System.out.printf(
+				"The average wait time for Regular Visitors who are in the gallery or finished viewing is %.2f seconds%n",
+				waitTimeReg / numOfReg);
+
 	}
 }
