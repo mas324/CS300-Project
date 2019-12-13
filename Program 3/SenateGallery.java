@@ -60,20 +60,23 @@ public class SenateGallery {
 		Visitor v;
 		
 		while(visitorFinished.hasNext()) {
-			//set v to next visitor finished
-			v = visitorFinished.next;
+	
 			if(v.getClass() == VIPVisitor)
+				v = visitorFinished.next;
 				numOfVIP++; //also add up the wait time from v	
+				waitTimeVIP = v / numOfVIP;
 			else
+				v = visitorFinished.next;
 				numOfReg++; //same
+				waitTimeReg = v / numOfReg;
 		}
 		
 		System.out.println("The date of the visit to the Senate Gallery is %s" + date);
 		System.out.println("Total who finished viewing is %d" + visitorFinished);
 		System.out.println("Total who are still in gallery is %d" + visitorInGallery);
 		System.out.println("Total who are still is %d" + waitingLine);
-		System.out.println("The average wait time for VIP Visitors who are in the gallery or finished viewing is %d seconds" + 
-		System.out.println("The average wait time for Regular Visitors who are in the gallery or finished viewing is %d seconds" + 
+		System.out.println("The average wait time for VIP Visitors who are in the gallery or finished viewing is %d seconds" + waitTimeVIP );
+		System.out.println("The average wait time for Regular Visitors who are in the gallery or finished viewing is %d seconds" + waitTimeReg );
 	
 				   
 		
