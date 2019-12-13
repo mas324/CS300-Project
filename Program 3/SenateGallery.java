@@ -55,10 +55,23 @@ public class SenateGallery {
 	public void ouputStatistics() {
 		float waitTimeVIP = 0, waitTimeReg = 0;
 		int numOfVIP = 0, numOfReg = 0;
+		Visitor v;
 
 		visitorFinished.reset();
 		while (visitorFinished.hasNext()) {
-			Visitor v = visitorFinished.next();
+			v = visitorFinished.next();
+			if (v.getClass() == VIPVisitor.class) {
+				waitTimeVIP += v.getTotalTimeInQueue();
+				numOfVIP++;
+			} else {
+				waitTimeReg += v.getTotalTimeInQueue();
+				numOfReg++;
+			}
+		}
+
+		visitorInGallery.reset();
+		while (visitorInGallery.hasNext()) {
+			v = visitorInGallery.next();
 			if (v.getClass() == VIPVisitor.class) {
 				waitTimeVIP += v.getTotalTimeInQueue();
 				numOfVIP++;
@@ -71,7 +84,7 @@ public class SenateGallery {
 		System.out.printf("The date of the visit to the Senate Gallery is %s%n", date);
 		System.out.printf("Total who finished viewing is %s%n", visitorFinished.size());
 		System.out.printf("Total who are still in gallery is %s%n", visitorInGallery.size());
-		System.out.printf("Total who are still is %s%n", waitingLine.size());
+		System.out.printf("Total who are still waiting is %s%n", waitingLine.size());
 		System.out.printf(
 				"The average wait time for VIP Visitors who are in the gallery or finished viewing is %.2f seconds%n",
 				waitTimeVIP / numOfVIP);
