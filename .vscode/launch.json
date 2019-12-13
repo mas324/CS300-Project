@@ -2,6 +2,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "CodeLens (Launch) - CreateGallerySimulation",
+            "request": "launch",
+            "mainClass": "CreateGallerySimulation",
+            "projectName": "CS300-Project_24ef4278"
+        },
+        {
+            "type": "java",
             "name": "CodeLens (Launch) - TestLLists",
             "request": "launch",
             "mainClass": "TestLLists",
