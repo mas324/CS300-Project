@@ -64,11 +64,11 @@ public class SenateGallery {
 			if(v.getClass() == VIPVisitor)
 				Visitor v = visitorFinished.next;
 				numOfVIP++; //also add up the wait time from v	
-				waitTimeVIP = v / numOfVIP;
+				waitTimeVIP = Visitor v / numOfVIP;
 			else
 				Visitor v = visitorFinished.next;
 				numOfReg++; //same
-				waitTimeReg = v / numOfReg;
+				waitTimeReg = Visitor v / numOfReg;
 		}
 		
 		System.out.println("The date of the visit to the Senate Gallery is %s" + date);
