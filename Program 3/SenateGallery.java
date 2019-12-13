@@ -75,9 +75,10 @@ public class SenateGallery {
 		double waitVIP = 0, waitREG = 0;
 		int countVIP = 0, countREG = 0;
 
-		for (int i = 0; i < visitorFinished.size(); i++) {
-			Visitor v = visitorFinished.get(i);
-			if (v.getClass().equals(VIPVisitor.class)) {
+		visitorFinished.reset();
+		while (visitorFinished.hasNext()) {
+			Visitor v = visitorFinished.next();
+			if (v.getClass() == VIPVisitor.class) {
 				countVIP++;
 				waitVIP += v.getTotalTimeInQueue();
 			} else {
