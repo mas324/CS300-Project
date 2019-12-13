@@ -62,11 +62,11 @@ public class SenateGallery {
 		while(visitorFinished.hasNext()) {
 	
 			if(v.getClass() == VIPVisitor)
-				v = visitorFinished.next;
+				Visitor v = visitorFinished.next;
 				numOfVIP++; //also add up the wait time from v	
 				waitTimeVIP = v / numOfVIP;
 			else
-				v = visitorFinished.next;
+				Visitor v = visitorFinished.next;
 				numOfReg++; //same
 				waitTimeReg = v / numOfReg;
 		}
